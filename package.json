@@ -9,7 +9,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "@fontsource/geist-sans": "^5.2.5",
+    "@fontsource-variable/geist": "^5.2.8",
+    "@fontsource-variable/geist-mono": "^5.2.7",
     "@takumi-rs/image-response": "^0.50.0",
     "@takumi-rs/wasm": "^0.50.0",
     "hono": "^4.10.4",

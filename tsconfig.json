@@ -6,7 +6,7 @@
     "strict": true,
     "skipLibCheck": true,
     "lib": ["ESNext"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "vite-plugin-arraybuffer/types"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
