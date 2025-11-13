@@ -1,22 +1,31 @@
+import aMinus from "./a-minus.png?url";
+import aPlus from "./a-plus.png?url";
 import { FpLogo } from "./FpLogo";
 
 type OpenGraphImageProps = {
   serverName: string;
   createdAt: Date;
-  // We gotta figure out these!
-  score: unknown;
+  score: "A+" | "A-" | "B+" | "B-" | "C+" | "C-";
 };
 
 export function OpenGraphImage({
   serverName,
   createdAt,
-  // score,
+  score,
 }: OpenGraphImageProps) {
   const createdAtString = createdAt.toLocaleDateString();
 
   // We have to do some funky positioning here to keep things consistent
   return (
     <div tw="bg-black w-full h-full relative">
+      <img
+        src={score === "A+" ? aPlus : aMinus}
+        alt={score}
+        tw="absolute inset-0"
+        // mx-auto utility doesn't work here, so we have to use inline style
+        style={{ margin: "0 auto" }}
+      />
+
       <div tw="absolute -top-64 left-11">
         <FpLogo width={12} />
       </div>
