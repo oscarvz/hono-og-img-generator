@@ -1,11 +1,24 @@
 import aMinus from "./a-minus.png?url";
 import aPlus from "./a-plus.png?url";
+import bMinus from "./b-minus.png?url";
+import bPlus from "./b-plus.png?url";
+import cMinus from "./c-minus.png?url";
+import cPlus from "./c-plus.png?url";
 import { FpLogo } from "./FpLogo";
 
 type OpenGraphImageProps = {
   serverName: string;
   createdAt: Date;
   score: "A+" | "A-" | "B+" | "B-" | "C+" | "C-";
+};
+
+const scoreImageMap: Record<OpenGraphImageProps["score"], string> = {
+  "A+": aPlus,
+  "A-": aMinus,
+  "B+": bPlus,
+  "B-": bMinus,
+  "C+": cPlus,
+  "C-": cMinus,
 };
 
 export function OpenGraphImage({
@@ -19,7 +32,7 @@ export function OpenGraphImage({
   return (
     <div tw="bg-black w-full h-full relative">
       <img
-        src={score === "A+" ? aPlus : aMinus}
+        src={scoreImageMap[score]}
         alt={score}
         tw="absolute inset-0"
         // mx-auto utility doesn't work here, so we have to use inline style
