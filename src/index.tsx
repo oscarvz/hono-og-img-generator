@@ -4,12 +4,13 @@ import { ImageResponse } from "@takumi-rs/image-response/wasm";
 import module from "@takumi-rs/wasm/takumi_wasm_bg.wasm";
 import { Hono } from "hono";
 import { OpenGraphImage } from "./components";
+import { prepareResources } from "./utils";
 
 const app = new Hono().get("/", async () => {
   // Pending data model & API
   const serverName = "Ella's Mega Chomp Project";
   const createdAt = new Date();
-  const score = 42;
+  const score = "A+";
 
   return new ImageResponse(
     <OpenGraphImage
@@ -23,6 +24,7 @@ const app = new Hono().get("/", async () => {
       height: 630,
       format: "webp",
       fonts: [geistNormal, geistMono],
+      fetchedResources: await prepareResources(),
     },
   );
 });
