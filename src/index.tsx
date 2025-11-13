@@ -10,7 +10,7 @@ const app = new Hono().get("/", async () => {
   // Pending data model & API
   const serverName = "Ella's Mega Chomp Project";
   const createdAt = new Date();
-  const score = "B-";
+  const score = "A+";
 
   return new ImageResponse(
     <OpenGraphImage

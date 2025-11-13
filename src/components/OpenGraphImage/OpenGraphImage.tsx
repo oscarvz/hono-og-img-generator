@@ -1,9 +1,9 @@
-import aMinus from "./a-minus.png?url";
-import aPlus from "./a-plus.png?url";
-import bMinus from "./b-minus.png?url";
-import bPlus from "./b-plus.png?url";
-import cMinus from "./c-minus.png?url";
-import cPlus from "./c-plus.png?url";
+import aMinus from "./a-minus.webp?url";
+import aPlus from "./a-plus.webp?url";
+import bMinus from "./b-minus.webp?url";
+import bPlus from "./b-plus.webp?url";
+import cMinus from "./c-minus.webp?url";
+import cPlus from "./c-plus.webp?url";
 import { FpLogo } from "./FpLogo";
 
 type OpenGraphImageProps = {
