@@ -1,21 +1,8 @@
-```txt
-npm install
-npm run dev
-```
+# Hono OpenGraph Image generator
 
-```txt
-npm run deploy
-```
+✨ wow.
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
+```sh
+bun i;
+bun dev
 ```
