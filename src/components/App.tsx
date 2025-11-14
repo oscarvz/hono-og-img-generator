@@ -12,11 +12,29 @@ export function App() {
         <link rel="stylesheet" href="/src/style.css" />
         <ViteClient />
       </head>
-      <body>
-        <div>
-          <h1>Ella's Mega Chomp Project</h1>
+      <body className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 animate-[fadeIn_0.6s_ease-in]">
+              Ella's Mega Chomp Project
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              A delightful list of amazing items
+            </p>
+          </div>
 
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center py-20">
+                <div className="text-center">
+                  <div className="inline-block w-16 h-16 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin mb-4" />
+                  <p className="text-gray-600 dark:text-gray-400 text-lg font-medium">
+                    Loading your amazing content...
+                  </p>
+                </div>
+              </div>
+            }
+          >
             <SomeData />
           </Suspense>
         </div>
