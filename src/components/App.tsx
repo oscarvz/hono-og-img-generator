@@ -9,6 +9,7 @@ export function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Open Graph Image</title>
         <Script src="/src/client.tsx" />
+        <link rel="stylesheet" href="/src/style.css" />
         <ViteClient />
       </head>
       <body>

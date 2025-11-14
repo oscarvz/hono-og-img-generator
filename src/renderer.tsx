@@ -18,9 +18,6 @@ export const renderer: MiddlewareHandler = async (c: Context, next) => {
 declare module "hono" {
   interface ContextRenderer {
     // biome-ignore lint/style/useShorthandFunctionType: type breaks
-    (
-      children: React.ReactElement,
-      props?: unknown,
-    ): Response | Promise<Response>;
+    (children: React.ReactElement): Response | Promise<Response>;
   }
 }

@@ -1,10 +1,11 @@
 import { use } from "react";
 
+// Simulate api/db call
 function fetchSomeData(): Promise<string[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(["Item 1", "Item 2", "Item 3"]);
-    }, 4000);
+    }, 2000);
   });
 }
 
