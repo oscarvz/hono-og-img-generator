@@ -1,3 +1,4 @@
+import type { OpenGraphImageProps } from "../../index";
 import aMinus from "./a-minus.webp?url";
 import aPlus from "./a-plus.webp?url";
 import bMinus from "./b-minus.webp?url";
@@ -6,13 +7,7 @@ import cMinus from "./c-minus.webp?url";
 import cPlus from "./c-plus.webp?url";
 import { FpLogo } from "./FpLogo";
 
-type OpenGraphImageProps = {
-  serverName: string;
-  createdAt: Date;
-  score: "A+" | "A-" | "B+" | "B-" | "C+" | "C-";
-};
-
-const scoreImageMap: Record<OpenGraphImageProps["score"], string> = {
+const gradeImageMap: Record<OpenGraphImageProps["grade"], string> = {
   "A+": aPlus,
   "A-": aMinus,
   "B+": bPlus,
@@ -24,7 +19,7 @@ const scoreImageMap: Record<OpenGraphImageProps["score"], string> = {
 export function OpenGraphImage({
   serverName,
   createdAt,
-  score,
+  grade,
 }: OpenGraphImageProps) {
   const createdAtString = createdAt.toLocaleDateString();
 
@@ -32,8 +27,8 @@ export function OpenGraphImage({
   return (
     <div tw="bg-black w-full h-full relative">
       <img
-        src={scoreImageMap[score]}
-        alt={score}
+        src={gradeImageMap[grade]}
+        alt={grade}
         tw="absolute inset-0"
         // mx-auto utility doesn't work here, so we have to use inline style
         style={{ margin: "0 auto" }}
