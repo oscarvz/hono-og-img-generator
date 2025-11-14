@@ -1,30 +1,25 @@
-import { Suspense, use, useState } from "react";
+import { Suspense } from "react";
+import { Script, ViteClient } from "vite-ssr-components/react";
 import { SomeData } from "./SomeData";
 
-function fetchSomeData(): Promise<string[]> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(["Item 1", "Item 2", "Item 3"]);
-    }, 4000);
-  });
-}
-
 export function App() {
-  const [count, setCount] = useState(0);
-
-  const items = use(fetchSomeData());
-
   return (
-    <div>
-      <h1>Hello Cruel World</h1>
-      <button type="button" onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-      <p>Count: {count}</p>
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open Graph Image</title>
+        <Script src="/src/client.tsx" />
+        <ViteClient />
+      </head>
+      <body>
+        <div>
+          <h1>Ella's Mega Chomp Project</h1>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <SomeData items={items} />
-      </Suspense>
-    </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SomeData />
+          </Suspense>
+        </div>
+      </body>
+    </html>
   );
 }
