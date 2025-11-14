@@ -8,7 +8,6 @@ export function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Open Graph Image</title>
         <Script src="/src/client.tsx" />
-        <link rel="stylesheet" href="/src/style.css" />
         <ViteClient />
       </head>
       <body className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
